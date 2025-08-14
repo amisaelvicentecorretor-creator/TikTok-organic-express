@@ -1,99 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TikTok Orgânico Express</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-      text-align: center;
+    :root{
+      --pink:#FE2C55; --cyan:#25F4EE; --bg:#000; --fg:#fff; --muted:#aaa;
     }
-    h1 {
-      background: linear-gradient(90deg, #ff0050, #00f2ea);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 2.2em;
-      margin-top: 20px;
+    *{box-sizing:border-box}
+    body{
+      font-family: Arial, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", sans-serif;
+      background:#000; color:#fff; margin:0; text-align:center;
     }
-    .section {
-      padding: 20px;
-      max-width: 600px;
-      margin: auto;
+    header{padding:24px 16px}
+    h1{
+      margin:8px 0 6px;
+      font-size: clamp(28px, 6vw, 40px);
+      background:linear-gradient(90deg, var(--pink), var(--cyan));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
     }
-    .problemas, .bonus {
-      background-color: #111;
-      border-radius: 10px;
-      padding: 15px;
-      margin: 20px 0;
+    h2{font-weight:400;color:var(--cyan);font-size:clamp(15px,3.5vw,18px);margin:0}
+    .section{padding:18px 16px; max-width:760px; margin:0 auto}
+    .card{background:#111; border-radius:14px; padding:14px; text-align:left}
+    ul{margin:0; padding:0; list-style:none}
+    li{padding:10px 12px; border-radius:10px; background:rgba(255,255,255,.05); margin:8px 0}
+    .cta{
+      display:inline-block; background:var(--cyan); color:#000; font-weight:700;
+      padding:14px 22px; border-radius:10px; text-decoration:none; margin:16px 0; font-size:16px
     }
-    button {
-      background-color: #00f2ea;
-      color: #000;
-      padding: 15px 25px;
-      font-size: 1em;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      margin: 20px 0;
+    .cta:hover{background:var(--pink); color:#fff}
+    .preview{margin:16px auto; max-width:820px; padding:0 12px}
+    .preview img{width:100%; border-radius:14px; display:block}
+    .fallback{
+      display:none; border-radius:14px; padding:22px;
+      background:linear-gradient(135deg, rgba(254,44,85,.2), rgba(37,244,238,.15));
+      border:1px solid rgba(255,255,255,.12)
     }
-    button:hover {
-      background-color: #ff0050;
-      color: #fff;
-    }
-    img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin: 20px 0;
-    }
-    footer {
-      font-size: 0.8em;
-      color: #aaa;
-      padding: 15px;
-    }
+    .fallback a{color:#000; background:#25F4EE; padding:10px 14px; border-radius:10px; text-decoration:none; font-weight:700}
+    footer{color:var(--muted); font-size:12px; padding:18px}
   </style>
 </head>
 <body>
+  <header>
+    <h1>TikTok Orgânico Express</h1>
+    <h2>30 dias de ideias, roteiros, músicas e legendas — sem aparecer</h2>
+  </header>
 
-  <h1>TikTok Orgânico Express</h1>
-  <p>Crie 30 dias de vídeos para TikTok em minutos.<br>Sem aparecer. Sem travar.</p>
-  <p>Ideias, roteiros, músicas e legendas — tudo pronto.</p>
+  <section class="section">
+    <div class="card">
+      <h3>Você sofre com isso?</h3>
+      <ul>
+        <li>Falta de ideias pra postar no TikTok</li>
+        <li>Perde horas pensando em roteiros</li>
+        <li>Posta sem estratégia e não cresce</li>
+        <li>Não sabe quais músicas usar pra viralizar</li>
+      </ul>
+    </div>
+  </section>
 
-  <div class="section problemas">
-    <p>❌ Falta de ideias pra postar no TikTok</p>
-    <p>❌ Perde horas pensando em roteiros</p>
-    <p>❌ Posta sem estratégia e não cresce</p>
-    <p>❌ Não sabe quais músicas usar pra viralizar</p>
-  </div>
+  <section class="section">
+    <h3>A solução em 1 clique</h3>
+    <p>Gere um calendário com 30 dias de conteúdo (1–3 vídeos/dia), com ganchos, roteiros (≤120 palavras), músicas sugeridas e legendas com CTA. É só copiar, gravar e postar.</p>
 
-  <h2>A solução em 1 clique:</h2>
-  <p>Nosso gerador automático cria um calendário com 30 dias de conteúdo para TikTok, com até 3 ideias por dia, roteiros prontos, músicas sugeridas e legendas já com CTA. É só copiar, gravar e postar.</p>
+    <div class="preview">
+      <!-- Usa a imagem local que você subiu (print.png). Se falhar, mostra fallback. -->
+      <img id="preview" src="./print.png" alt="Prévia do app TikTok Orgânico Express">
+      <div id="fallback" class="fallback">
+        <p>Prévia indisponível. Veja o app funcionando ao vivo:</p>
+        <p><a href="https://tiktok-organic-planner.lovable.app" target="_blank" rel="noopener">Abrir demo ao vivo</a></p>
+      </div>
+    </div>
 
-  <img src="https://i.ibb.co/s9sR8zC/tiktok-organico.png" alt="Prévia do TikTok Orgânico Express">
+    <a class="cta" href="https://pay.cakto.com.br/48fy859_517928">Quero acessar agora</a>
+  </section>
 
-  <a href="https://pay.cakto.com.br/48fy859_517928">
-    <button>Quero meu acesso agora</button>
-  </a>
-
-  <div class="section bonus">
-    <h3>🎁 Bônus Exclusivos</h3>
-    <p>📌 Pack de ganchos virais para aumentar visualizações</p>
-    <p>📌 Lista de hashtags quentes pra cada nicho</p>
-    <p>📌 Tutorial rápido: como postar 20x mais rápido</p>
-  </div>
-
-  <a href="https://pay.cakto.com.br/48fy859_517928">
-    <button>Garantir com Bônus</button>
-  </a>
+  <section class="section">
+    <div class="card">
+      <h3>🎁 Bônus de Lançamento</h3>
+      <ul>
+        <li>Pack com 100 ganchos virais testados</li>
+        <li>Checklist diário de crescimento</li>
+      </ul>
+      <p><strong>Preço especial: R$ 27,00</strong></p>
+      <a class="cta" href="https://pay.cakto.com.br/48fy859_517928">Liberar meu acesso</a>
+    </div>
+  </section>
 
   <footer>
-    © 2025 TikTok Orgânico Express — Todos os direitos reservados.
+    Conteúdo para fins educacionais. Resultados variam. © 2025 TikTok Orgânico Express.
   </footer>
 
+  <script>
+    // Se a imagem não carregar, exibe o fallback com link para o app no Lovable
+    const img = document.getElementById('preview');
+    const fb  = document.getElementById('fallback');
+    img.addEventListener('error', () => { img.style.display='none'; fb.style.display='block'; });
+  </script>
 </body>
-</html>
+          </html>
